@@ -1,14 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
+import {
+  Calculator,
+  ChevronDown,
+  FileText,
+  Info,
+  Mail,
+  Menu,
+  ReceiptText,
+  ShieldAlert,
+  WheatOff,
+} from "lucide-react";
 
 const primaryLinks = [
-  { href: "/", label: "Calculator" },
-  { href: "/#table", label: "Nutrition table" },
-  { href: "/allergen-menu", label: "Allergen menu" },
-  { href: "/gluten-free-menu", label: "Gluten Free" },
-  { href: "/about-us", label: "About" },
-  { href: "/contact-us", label: "Contact" },
+  {
+    href: "/",
+    label: "Calculator",
+    description: "Build a meal and total calories, macros, and nutrition.",
+    icon: Calculator,
+  },
+  {
+    href: "/raising-canes-menu",
+    label: "Menu prices",
+    description: "See Cane's combos, sides, drinks, prices, and calories.",
+    icon: ReceiptText,
+  },
+  {
+    href: "/#table",
+    label: "Nutrition table",
+    description: "Scan item-by-item nutrition facts from the dataset.",
+    icon: FileText,
+  },
+  {
+    href: "/allergen-menu",
+    label: "Allergen menu",
+    description: "Check wheat, milk, egg, soy, fish, sesame, and more.",
+    icon: ShieldAlert,
+  },
+  {
+    href: "/gluten-free-menu",
+    label: "Gluten Free",
+    description: "Review gluten-sensitive options and cross-contact notes.",
+    icon: WheatOff,
+  },
+  {
+    href: "/about-us",
+    label: "About",
+    description: "Learn about this independent nutrition guide.",
+    icon: Info,
+  },
+  {
+    href: "/contact-us",
+    label: "Contact",
+    description: "Send corrections, questions, or feedback.",
+    icon: Mail,
+  },
 ];
+
+const megaLinks = primaryLinks.slice(1, 5);
+const utilityLinks = primaryLinks.slice(5);
 
 const legalLinks = [
   { href: "/about-us", label: "About Us" },
@@ -18,33 +69,162 @@ const legalLinks = [
   { href: "/disclaimer", label: "Disclaimer" },
 ];
 
+function MegaLink({
+  href,
+  label,
+  description,
+  icon: Icon,
+}: {
+  href: string;
+  label: string;
+  description: string;
+  icon: LucideIcon;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group/item grid grid-cols-[auto_1fr] gap-3 border border-black/10 bg-white p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef]"
+    >
+      <span className="flex h-10 w-10 items-center justify-center bg-[#151515] text-white transition group-hover/item:bg-[#d71920]">
+        <Icon aria-hidden="true" className="h-5 w-5" />
+      </span>
+      <span>
+        <span className="block text-sm font-black text-[#151515]">{label}</span>
+        <span className="mt-1 block text-xs font-semibold leading-5 text-black/55">
+          {description}
+        </span>
+      </span>
+    </Link>
+  );
+}
+
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/90 shadow-sm shadow-black/5 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <Link href="/" className="flex w-fit items-center gap-3">
-          <Image
-            src="/site-logo.png"
-            alt="Cane's Nutrition Calculator logo"
-            width={52}
-            height={52}
-            className="h-12 w-12 rounded-2xl border border-black/10 object-cover shadow-sm"
-            priority
-          />
-          <span>
-            <span className="block text-base font-black leading-tight tracking-normal">
-              Cane&apos;s Nutrition Calculator
+    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl">
+      <div className="hidden border-b border-white/10 bg-[#151515] text-white lg:block">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2 text-xs font-bold uppercase text-white/65">
+          <p>Independent Cane&apos;s nutrition guide</p>
+          <nav className="flex items-center gap-5">
+            <Link className="transition hover:text-white" href="/raising-canes-menu">
+              Menu prices
+            </Link>
+            <Link className="transition hover:text-white" href="/allergen-menu">
+              Allergen guide
+            </Link>
+            <Link className="transition hover:text-white" href="/gluten-free-menu">
+              Gluten free
+            </Link>
+          </nav>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          <Link href="/" className="flex min-w-0 items-center gap-3">
+            <Image
+              src="/site-logo.png"
+              alt="Cane's Nutrition Calculator logo"
+              width={56}
+              height={56}
+              className="h-12 w-12 shrink-0 rounded-2xl border border-black/10 object-cover shadow-sm sm:h-14 sm:w-14"
+              priority
+            />
+            <span className="min-w-0">
+              <span className="block truncate text-base font-black leading-tight tracking-normal sm:text-lg">
+                Cane&apos;s Nutrition Calculator
+              </span>
+              <span className="block truncate text-xs font-bold uppercase text-black/45">
+                Calories, macros & allergens
+              </span>
             </span>
-            <span className="block text-xs font-bold uppercase text-black/45">
-              Calories, macros & allergens
-            </span>
-          </span>
-        </Link>
-        <nav className="flex flex-wrap items-center gap-2 text-sm font-bold text-black/60">
-          {primaryLinks.map((link) => (
+          </Link>
+
+          <nav className="hidden items-center gap-2 lg:flex">
+            <Link
+              className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+              href="/"
+            >
+              <Calculator aria-hidden="true" className="h-4 w-4" />
+              Calculator
+            </Link>
+
+            <div className="group relative">
+              <button
+                className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+                type="button"
+              >
+                Explore
+                <ChevronDown
+                  aria-hidden="true"
+                  className="h-4 w-4 transition group-hover:rotate-180"
+                />
+              </button>
+              <div className="invisible absolute right-0 top-full w-[720px] translate-y-3 border border-black/10 bg-white p-5 opacity-0 shadow-2xl shadow-black/15 transition group-hover:visible group-hover:translate-y-2 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-2 group-focus-within:opacity-100">
+                <div className="grid gap-5 lg:grid-cols-[0.78fr_1fr]">
+                  <div className="bg-[#151515] p-5 text-white">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ffd166]">
+                      Menu hub
+                    </p>
+                    <p className="mt-3 text-2xl font-black leading-tight">
+                      Compare menu prices, nutrition, allergens, and gluten
+                      notes.
+                    </p>
+                    <Link
+                      href="/raising-canes-menu"
+                      className="mt-5 inline-flex bg-[#d71920] px-4 py-3 text-xs font-black uppercase text-white transition hover:bg-[#b9151b]"
+                    >
+                      View menu
+                    </Link>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {megaLinks.map((link) => (
+                      <MegaLink key={link.href} {...link} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {utilityLinks.map((link) => (
+              <Link
+                key={link.href}
+                className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+                href={link.href}
+              >
+                <link.icon aria-hidden="true" className="h-4 w-4" />
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <details className="group relative lg:hidden">
+            <summary className="flex cursor-pointer list-none items-center gap-2 border border-black/10 bg-[#151515] px-3 py-3 text-sm font-black uppercase text-white transition hover:bg-[#d71920]">
+              <Menu aria-hidden="true" className="h-5 w-5" />
+              Menu
+            </summary>
+            <div className="absolute right-0 top-full z-50 mt-3 max-h-[calc(100vh-7rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto border border-black/10 bg-white p-3 shadow-2xl shadow-black/20">
+              <div className="border border-black/10 bg-[#151515] p-4 text-white">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ffd166]">
+                  Quick access
+                </p>
+                <p className="mt-2 text-lg font-black leading-tight">
+                  Menu, nutrition, allergens, and gluten guides.
+                </p>
+              </div>
+              <nav className="mt-3 grid gap-2">
+                {primaryLinks.map((link) => (
+                  <MegaLink key={link.href} {...link} />
+                ))}
+              </nav>
+            </div>
+          </details>
+        </div>
+
+        <nav className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:hidden">
+          {primaryLinks.slice(0, 4).map((link) => (
             <Link
               key={link.href}
-              className="border border-black/10 bg-white px-3 py-2 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+              className="inline-flex min-h-11 items-center justify-center border border-black/10 bg-white px-2 py-2 text-center text-xs font-black uppercase text-black/60 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
               href={link.href}
             >
               {link.label}

@@ -168,7 +168,14 @@ export default function Home() {
           </h1>
           <p className="mt-4 max-w-4xl text-lg leading-8 text-black/60">
             Build a Cane&apos;s meal, compare calories and macros, review
-            nutrition facts, and check menu items before ordering.
+            nutrition facts, and check the{" "}
+            <Link
+              href="/raising-canes-menu"
+              className="font-black text-[#d71920] underline underline-offset-4 hover:text-[#b9151b]"
+            >
+              Raising Cane&apos;s menu with prices
+            </Link>{" "}
+            before ordering.
           </p>
         </div>
 
@@ -189,7 +196,7 @@ export default function Home() {
           <NutritionCalculator />
         </Suspense>
         <p className="mx-auto max-w-7xl px-4 pt-4 text-xs font-semibold text-black/50 text-center">
-          Disclaimer: This tool is for informational purposes only and is not medical advice. Data compiled from official Raising Cane's nutritional publications as of May 2026.
+          Disclaimer: This tool is for informational purposes only and is not medical advice. Data compiled from official Raising Cane&apos;s nutritional publications as of May 2026.
         </p>
       </div>
 
@@ -320,7 +327,7 @@ export default function Home() {
             {[
               {
                 title: "Chicken Fingers",
-                text: <>Chicken fingers are the main item at Raising Cane's. They usually provide protein, but they also contain calories, fat, carbs, and sodium because they are breaded and fried. If you are sensitive to wheat, you should consult our <Link href="/gluten-free-menu" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Raising Cane&apos;s Gluten Free Menu Guide</Link>. If your goal is more protein, chicken fingers are usually the main source in your meal.</>,
+                text: <>Chicken fingers are the main item at Raising Cane&apos;s. They usually provide protein, but they also contain calories, fat, carbs, and sodium because they are breaded and fried. If you are sensitive to wheat, you should consult our <Link href="/gluten-free-menu" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Raising Cane&apos;s Gluten Free Menu Guide</Link>. If your goal is more protein, chicken fingers are usually the main source in your meal.</>,
               },
               {
                 title: "Crinkle-Cut Fries",

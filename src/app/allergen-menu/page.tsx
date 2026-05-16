@@ -391,8 +391,15 @@ export default function AllergenMenuPage() {
               You can use this page as a helpful Cane&apos;s allergy menu guide, but
               always confirm the latest details from the official Raising
               Cane&apos;s allergen and nutrition information before ordering.
-              Raising Cane&apos;s official menu page also links to its allergen and
-              nutritional information PDF.
+              If you are comparing combos, sides, and drinks first, review our{" "}
+              <Link
+                href="/raising-canes-menu"
+                className="font-black text-[#d71920] underline hover:text-[#b9151b]"
+              >
+                Raising Cane&apos;s menu with prices
+              </Link>{" "}
+              alongside this allergen guide. Raising Cane&apos;s official menu page
+              also links to its allergen and nutritional information PDF.
             </p>
           </GuideSection>
 
