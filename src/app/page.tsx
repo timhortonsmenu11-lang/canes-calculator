@@ -327,7 +327,7 @@ export default function Home() {
             {[
               {
                 title: "Chicken Fingers",
-                text: <>Chicken fingers are the main item at Raising Cane&apos;s. They usually provide protein, but they also contain calories, fat, carbs, and sodium because they are breaded and fried. If you are sensitive to wheat, you should consult our <Link href="/gluten-free-menu" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Raising Cane&apos;s Gluten Free Menu Guide</Link>. If your goal is more protein, chicken fingers are usually the main source in your meal.</>,
+                text: <>Chicken fingers are the main item at Raising Cane&apos;s. They usually provide protein, but they also contain calories, fat, carbs, and sodium because they are breaded and fried. If you are sensitive to wheat, you should consult our <Link href="/gluten-free-menu" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Raising Cane&apos;s Gluten Free Menu Guide</Link>. If your goal is more protein, chicken fingers are usually the main source in your meal. To see an exact breakdown by order size, check out our full guide on <Link href="/calories-in-raising-canes-chicken-fingers" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Calories in Raising Cane&apos;s Chicken Fingers</Link>.</>,
               },
               {
                 title: "Crinkle-Cut Fries",

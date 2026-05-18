@@ -8,6 +8,7 @@ import {
   Info,
   Mail,
   Menu,
+  Newspaper,
   ReceiptText,
   ShieldAlert,
   WheatOff,
@@ -22,19 +23,19 @@ const primaryLinks = [
   },
   {
     href: "/raising-canes-menu",
-    label: "Menu prices",
+    label: "Menu & Prices",
     description: "See Cane's combos, sides, drinks, prices, and calories.",
     icon: ReceiptText,
   },
   {
     href: "/#table",
-    label: "Nutrition table",
+    label: "Nutrition Table",
     description: "Scan item-by-item nutrition facts from the dataset.",
     icon: FileText,
   },
   {
     href: "/allergen-menu",
-    label: "Allergen menu",
+    label: "Allergen Menu",
     description: "Check wheat, milk, egg, soy, fish, sesame, and more.",
     icon: ShieldAlert,
   },
@@ -43,6 +44,12 @@ const primaryLinks = [
     label: "Gluten Free",
     description: "Review gluten-sensitive options and cross-contact notes.",
     icon: WheatOff,
+  },
+  {
+    href: "/blog",
+    label: "Blog",
+    description: "Nutrition guides, calorie breakdowns, and tips.",
+    icon: Newspaper,
   },
   {
     href: "/about-us",
@@ -58,8 +65,8 @@ const primaryLinks = [
   },
 ];
 
-const megaLinks = primaryLinks.slice(1, 5);
-const utilityLinks = primaryLinks.slice(5);
+const megaLinks = primaryLinks.slice(1, 6);
+const utilityLinks = primaryLinks.slice(6);
 
 const legalLinks = [
   { href: "/about-us", label: "About Us" },
@@ -83,9 +90,9 @@ function MegaLink({
   return (
     <Link
       href={href}
-      className="group/item grid grid-cols-[auto_1fr] gap-3 border border-black/10 bg-white p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef]"
+      className="group/item grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-black/5 bg-white p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:shadow-md"
     >
-      <span className="flex h-10 w-10 items-center justify-center bg-[#151515] text-white transition group-hover/item:bg-[#d71920]">
+      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#151515] text-white transition group-hover/item:bg-[#d71920]">
         <Icon aria-hidden="true" className="h-5 w-5" />
       </span>
       <span>
@@ -101,18 +108,22 @@ function MegaLink({
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-white/95 shadow-lg shadow-black/5 backdrop-blur-xl">
+      {/* top utility bar */}
       <div className="hidden border-b border-white/10 bg-[#151515] text-white lg:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2 text-xs font-bold uppercase text-white/65">
           <p>Independent Cane&apos;s nutrition guide</p>
           <nav className="flex items-center gap-5">
             <Link className="transition hover:text-white" href="/raising-canes-menu">
-              Menu prices
+              Menu &amp; Prices
             </Link>
             <Link className="transition hover:text-white" href="/allergen-menu">
-              Allergen guide
+              Allergen Guide
             </Link>
             <Link className="transition hover:text-white" href="/gluten-free-menu">
-              Gluten free
+              Gluten Free
+            </Link>
+            <Link className="transition hover:text-[#ffd166]" href="/blog">
+              Blog
             </Link>
           </nav>
         </div>
@@ -134,14 +145,14 @@ export function SiteHeader() {
                 Cane&apos;s Nutrition Calculator
               </span>
               <span className="block truncate text-xs font-bold uppercase text-black/45">
-                Calories, macros & allergens
+                Calories, macros &amp; allergens
               </span>
             </span>
           </Link>
 
           <nav className="hidden items-center gap-2 lg:flex">
             <Link
-              className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+              className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
               href="/"
             >
               <Calculator aria-hidden="true" className="h-4 w-4" />
@@ -150,7 +161,7 @@ export function SiteHeader() {
 
             <div className="group relative">
               <button
-                className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+                className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
                 type="button"
               >
                 Explore
@@ -159,9 +170,9 @@ export function SiteHeader() {
                   className="h-4 w-4 transition group-hover:rotate-180"
                 />
               </button>
-              <div className="invisible absolute right-0 top-full w-[720px] translate-y-3 border border-black/10 bg-white p-5 opacity-0 shadow-2xl shadow-black/15 transition group-hover:visible group-hover:translate-y-2 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-2 group-focus-within:opacity-100">
+              <div className="invisible absolute right-0 top-full w-[720px] translate-y-3 rounded-xl border border-black/10 bg-white p-5 opacity-0 shadow-2xl shadow-black/15 transition group-hover:visible group-hover:translate-y-2 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-2 group-focus-within:opacity-100">
                 <div className="grid gap-5 lg:grid-cols-[0.78fr_1fr]">
-                  <div className="bg-[#151515] p-5 text-white">
+                  <div className="rounded-xl bg-[#151515] p-5 text-white">
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ffd166]">
                       Menu hub
                     </p>
@@ -171,7 +182,7 @@ export function SiteHeader() {
                     </p>
                     <Link
                       href="/raising-canes-menu"
-                      className="mt-5 inline-flex bg-[#d71920] px-4 py-3 text-xs font-black uppercase text-white transition hover:bg-[#b9151b]"
+                      className="mt-5 inline-flex rounded-lg bg-[#d71920] px-4 py-3 text-xs font-black uppercase text-white transition hover:bg-[#b9151b]"
                     >
                       View menu
                     </Link>
@@ -188,7 +199,7 @@ export function SiteHeader() {
             {utilityLinks.map((link) => (
               <Link
                 key={link.href}
-                className="inline-flex items-center gap-2 border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+                className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white px-4 py-3 text-sm font-black text-black/70 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
                 href={link.href}
               >
                 <link.icon aria-hidden="true" className="h-4 w-4" />
@@ -198,12 +209,12 @@ export function SiteHeader() {
           </nav>
 
           <details className="group relative lg:hidden">
-            <summary className="flex cursor-pointer list-none items-center gap-2 border border-black/10 bg-[#151515] px-3 py-3 text-sm font-black uppercase text-white transition hover:bg-[#d71920]">
+            <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-black/10 bg-[#151515] px-3 py-3 text-sm font-black uppercase text-white transition hover:bg-[#d71920]">
               <Menu aria-hidden="true" className="h-5 w-5" />
               Menu
             </summary>
-            <div className="absolute right-0 top-full z-50 mt-3 max-h-[calc(100vh-7rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto border border-black/10 bg-white p-3 shadow-2xl shadow-black/20">
-              <div className="border border-black/10 bg-[#151515] p-4 text-white">
+            <div className="absolute right-0 top-full z-50 mt-3 max-h-[calc(100vh-7rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-black/10 bg-white p-3 shadow-2xl shadow-black/20">
+              <div className="rounded-xl border border-black/10 bg-[#151515] p-4 text-white">
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ffd166]">
                   Quick access
                 </p>
@@ -220,11 +231,11 @@ export function SiteHeader() {
           </details>
         </div>
 
-        <nav className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:hidden">
-          {primaryLinks.slice(0, 4).map((link) => (
+        <nav className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5 lg:hidden">
+          {primaryLinks.slice(0, 5).map((link) => (
             <Link
               key={link.href}
-              className="inline-flex min-h-11 items-center justify-center border border-black/10 bg-white px-2 py-2 text-center text-xs font-black uppercase text-black/60 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-black/10 bg-white px-2 py-2 text-center text-xs font-black uppercase text-black/60 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:text-[#d71920]"
               href={link.href}
             >
               {link.label}
