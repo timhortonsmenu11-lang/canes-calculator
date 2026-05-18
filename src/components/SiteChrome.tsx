@@ -79,7 +79,6 @@ const legalLinks = [
 function MegaLink({
   href,
   label,
-  description,
   icon: Icon,
 }: {
   href: string;
@@ -90,17 +89,12 @@ function MegaLink({
   return (
     <Link
       href={href}
-      className="group/item grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-black/5 bg-white p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:shadow-md"
+      className="group/item flex items-center gap-3 rounded-xl border border-black/5 bg-white p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef] hover:shadow-md"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#151515] text-white transition group-hover/item:bg-[#d71920]">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#151515] text-white transition group-hover/item:bg-[#d71920]">
         <Icon aria-hidden="true" className="h-5 w-5" />
       </span>
-      <span>
-        <span className="block text-sm font-black text-[#151515]">{label}</span>
-        <span className="mt-1 block text-xs font-semibold leading-5 text-black/55">
-          {description}
-        </span>
-      </span>
+      <span className="text-sm font-black text-[#151515]">{label}</span>
     </Link>
   );
 }
