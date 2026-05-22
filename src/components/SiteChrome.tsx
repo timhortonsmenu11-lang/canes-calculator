@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
+  BookOpenCheck,
   Calculator,
   ChevronDown,
+  ClipboardCheck,
   FileText,
   Info,
   Mail,
@@ -48,7 +50,7 @@ const primaryLinks = [
   {
     href: "/blog",
     label: "Blog",
-    description: "Nutrition guides, calorie breakdowns, and tips.",
+    description: "Nutrition guides, payment answers, and ordering tips.",
     icon: Newspaper,
   },
   {
@@ -241,9 +243,108 @@ export function SiteHeader() {
   );
 }
 
+function AuthorBio() {
+  return (
+    <section className="mx-auto mb-10 max-w-7xl border border-white/10 bg-white/[0.04] p-5 text-white shadow-2xl shadow-black/20 sm:p-8">
+      <div className="grid gap-6 lg:grid-cols-[0.72fr_1fr] lg:items-start">
+        <div>
+          <p className="text-sm font-black uppercase text-[#ffd166]">
+            About the author
+          </p>
+          <div className="mt-4 flex items-center gap-3">
+            <Image
+              src="/site-logo.png"
+              alt="Cane's Nutrition Calculator editorial team"
+              width={58}
+              height={58}
+              className="h-14 w-14 rounded-2xl border border-white/10 object-cover"
+            />
+            <div>
+              <h2 className="text-2xl font-black leading-tight">
+                Cane&apos;s Nutrition Calculator Editorial Team
+              </h2>
+              <p className="mt-1 text-sm font-bold uppercase text-white/45">
+                Fast-food nutrition, menu research, and allergen guides
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 leading-7 text-white/70">
+            Our independent editorial team organizes Raising Cane&apos;s
+            nutrition data, menu details, payment questions, allergen notes, and
+            ordering tips into practical guides for everyday customers. We write
+            for people who want quick answers before they order, then connect
+            those answers to useful tools like the meal calculator and nutrition
+            table.
+          </p>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/"
+            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
+          >
+            <Calculator
+              aria-hidden="true"
+              className="h-5 w-5 text-[#ffd166]"
+            />
+            <p className="mt-3 font-black text-white">Nutrition calculator</p>
+            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
+              Build a Cane&apos;s meal and check calories, macros, sodium, and
+              protein totals.
+            </p>
+          </Link>
+          <Link
+            href="/raising-canes-menu"
+            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
+          >
+            <BookOpenCheck
+              aria-hidden="true"
+              className="h-5 w-5 text-[#ffd166]"
+            />
+            <p className="mt-3 font-black text-white">Menu and prices</p>
+            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
+              Compare combos, sides, drinks, prices, and menu notes before
+              ordering.
+            </p>
+          </Link>
+          <Link
+            href="/allergen-menu"
+            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
+          >
+            <ShieldAlert
+              aria-hidden="true"
+              className="h-5 w-5 text-[#ffd166]"
+            />
+            <p className="mt-3 font-black text-white">Allergen guide</p>
+            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
+              Review wheat, milk, egg, soy, fish, sesame, and cross-contact
+              notes.
+            </p>
+          </Link>
+          <Link
+            href="/blog"
+            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
+          >
+            <ClipboardCheck
+              aria-hidden="true"
+              className="h-5 w-5 text-[#ffd166]"
+            />
+            <p className="mt-3 font-black text-white">Research notes</p>
+            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
+              Read payment guides, calorie breakdowns, and practical ordering
+              answers.
+            </p>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-black/10 bg-[#151515] px-4 py-10 text-white sm:px-6 lg:px-8">
+      <AuthorBio />
       <div className="mx-auto grid max-w-7xl gap-8 text-sm text-white/60 lg:grid-cols-[1fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">

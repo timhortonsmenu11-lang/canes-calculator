@@ -50,7 +50,7 @@ const faqItems = [
 
 export default function ChickenFingerCaloriesPage() {
   const jsonLd = [
-    { "@context": "https://schema.org", "@type": "Article", headline: "How Many Calories in Raising Cane's Chicken Fingers? Every Combo Covered", author: { "@type": "Organization", name: "Cane's Nutrition Calculator" }, publisher: { "@type": "Organization", name: "Cane's Nutrition Calculator", logo: { "@type": "ImageObject", url: "https://canesnutritioncalculator.us/site-logo.png" } }, mainEntityOfPage: { "@type": "WebPage", "@id": "https://canesnutritioncalculator.us/calories-in-raising-canes-chicken-fingers" } },
+    { "@context": "https://schema.org", "@type": "Article", headline: "How Many Calories in Raising Cane's Chicken Fingers? Every Combo Covered", author: { "@type": "Organization", name: "Cane's Nutrition Calculator Editorial Team" }, publisher: { "@type": "Organization", name: "Cane's Nutrition Calculator", logo: { "@type": "ImageObject", url: "https://canesnutritioncalculator.us/site-logo.png" } }, mainEntityOfPage: { "@type": "WebPage", "@id": "https://canesnutritioncalculator.us/calories-in-raising-canes-chicken-fingers" } },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqItems.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ];
 

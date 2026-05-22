@@ -181,7 +181,7 @@ export default function ApplePayGuidePage() {
       dateModified: "2026-05-22",
       author: {
         "@type": "Organization",
-        name: "Cane's Nutrition Calculator",
+        name: "Cane's Nutrition Calculator Editorial Team",
       },
       publisher: {
         "@type": "Organization",
@@ -270,7 +270,15 @@ export default function ApplePayGuidePage() {
               Many Raising Cane&apos;s locations may accept Apple Pay,
               especially for in-store contactless payments, but availability can
               vary by restaurant. Use this guide to check what usually works,
-              what the official FAQ lists, and what backup payment to keep ready.
+              what the official FAQ lists, and what backup payment to keep
+              ready. If you are planning your order too, compare the{" "}
+              <Link
+                href="/raising-canes-menu"
+                className="font-black text-[#d71920] underline underline-offset-4 hover:text-[#b9151b]"
+              >
+                Raising Cane&apos;s menu with prices
+              </Link>{" "}
+              before you pay.
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-xs font-black uppercase">
               <span className="bg-[#d71920] px-3 py-2 text-white">
@@ -338,7 +346,15 @@ export default function ApplePayGuidePage() {
           <p>
             So, if you are asking whether Cane&apos;s takes Apple Pay, the
             practical answer is: it may work at many locations, but confirm at
-            your local restaurant before depending on it.
+            your local restaurant before depending on it. Once you know how you
+            will pay, you can use the{" "}
+            <Link
+              href="/"
+              className="font-black text-[#d71920] underline hover:text-[#b9151b]"
+            >
+              Cane&apos;s Nutrition Calculator
+            </Link>{" "}
+            to check your meal calories and macros before ordering.
           </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {acceptedPayments.map((payment) => (
@@ -379,7 +395,14 @@ export default function ApplePayGuidePage() {
           <p>
             If the restaurant has contactless payment enabled, you can usually
             pay with your iPhone or Apple Watch the same way you would use a
-            tap-to-pay card.
+            tap-to-pay card. If you are choosing a combo while you wait, the{" "}
+            <Link
+              href="/calories-in-raising-canes-chicken-fingers"
+              className="font-black text-[#d71920] underline hover:text-[#b9151b]"
+            >
+              chicken fingers calorie guide
+            </Link>{" "}
+            can help you quickly estimate the main part of your meal.
           </p>
           <ol className="grid gap-3">
             {[
@@ -449,10 +472,18 @@ export default function ApplePayGuidePage() {
               merchant. Instead, Apple Pay uses device-based payment security,
               which can be safer than handing over a physical card.
             </p>
-            <p>
-              For quick fast-food orders, it is also convenient because you do
-              not need to carry cash or pull out your card.
-            </p>
+          <p>
+            For quick fast-food orders, it is also convenient because you do
+            not need to carry cash or pull out your card. If food sensitivity is
+            part of your ordering decision, check the{" "}
+            <Link
+              href="/allergen-menu"
+              className="font-black text-[#d71920] underline hover:text-[#b9151b]"
+            >
+              Raising Cane&apos;s allergen menu
+            </Link>{" "}
+            before you finalize the order.
+          </p>
           </GuideSection>
 
           <section className="border border-black/10 bg-[#151515] p-5 text-white shadow-xl shadow-black/10 sm:p-8">
@@ -483,9 +514,63 @@ export default function ApplePayGuidePage() {
             For the safest experience, try Apple Pay at the counter or ask first
             at the drive-thru. If you are ordering in the app, check whether
             Apple Pay appears at checkout. Always keep a backup payment method
-            in case Apple Pay is not available.
+            in case Apple Pay is not available. For gluten-sensitive orders,
+            review the{" "}
+            <Link
+              href="/gluten-free-menu"
+              className="font-black text-[#d71920] underline hover:text-[#b9151b]"
+            >
+              Raising Cane&apos;s gluten free menu guide
+            </Link>{" "}
+            before relying on any item.
           </p>
         </GuideSection>
+
+        <section className="border border-black/10 bg-white p-5 shadow-xl shadow-black/5 sm:p-8">
+          <p className="text-sm font-black uppercase text-[#d71920]">
+            Helpful guides before you order
+          </p>
+          <h2 className="mt-2 text-3xl font-black leading-tight">
+            Plan the Payment and the Meal Together
+          </h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              {
+                href: "/",
+                title: "Build your meal total",
+                text: "Use the calculator for calories, macros, protein, sodium, and meal totals.",
+              },
+              {
+                href: "/raising-canes-menu",
+                title: "Check menu prices",
+                text: "Compare combos, sides, sauces, drinks, and prices before checkout.",
+              },
+              {
+                href: "/allergen-menu",
+                title: "Review allergens",
+                text: "Check wheat, milk, egg, soy, fish, sesame, and cross-contact notes.",
+              },
+              {
+                href: "/calories-in-raising-canes-chicken-fingers",
+                title: "Estimate chicken calories",
+                text: "See calories and protein for tenders, combos, and popular meal sizes.",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group border border-black/10 bg-[#f8f6ef] p-4 transition hover:border-[#d71920]/30 hover:bg-[#fff8ef]"
+              >
+                <p className="font-black text-[#151515] group-hover:text-[#d71920]">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-black/55">
+                  {item.text}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <section className="border border-black/10 bg-white p-5 shadow-xl shadow-black/5 sm:p-8">
           <p className="text-sm font-black uppercase text-[#d71920]">
@@ -553,7 +638,9 @@ export default function ApplePayGuidePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-8 text-white/70">
             Before you pay, use the nutrition calculator to check your meal
-            totals for calories, protein, sodium, and allergens.
+            totals for calories, protein, sodium, and allergens. It pairs well
+            with the menu guide when you are deciding between a smaller combo
+            and a larger order.
           </p>
           <Link
             href="/"
