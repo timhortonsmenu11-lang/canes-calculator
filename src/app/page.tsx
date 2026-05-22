@@ -199,16 +199,6 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-6 overflow-hidden border border-black/10 bg-white shadow-xl shadow-black/5">
-          <Image
-            src="/raising%20cane%27s%20nutrition%20facts%20calculator.webp"
-            alt="Raising Cane's nutrition facts calculator showing calories and macros"
-            width={1200}
-            height={700}
-            className="h-auto w-full object-cover"
-            priority
-          />
-        </div>
       </section>
 
       <div id="calculator">
@@ -373,6 +363,16 @@ export default function Home() {
             ))}
           </div>
         </ContentSection>
+
+        <section className="overflow-hidden border border-black/10 bg-white shadow-xl shadow-black/5">
+          <Image
+            src="/raising%20cane%27s%20nutrition%20facts%20calculator.webp"
+            alt="Raising Cane's nutrition facts calculator showing calories and macros"
+            width={1200}
+            height={700}
+            className="h-auto w-full object-cover"
+          />
+        </section>
 
         <div className="grid gap-6 lg:grid-cols-2">
           <ContentSection title="How to Use the Canes Macro Calculator">
