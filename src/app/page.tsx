@@ -6,9 +6,9 @@ import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cane's Nutrition Calculator, Calories & Macros 2026",
+  title: "Raising Cane's Calculator | Check Calories & Nutrition Facts",
   description:
-    "Use Cane's Nutrition Calculator to check calories, macros, and nutrition facts for chicken fingers, fries, Texas toast, Cane's Sauce, drinks, and combos.",
+    "Build your meal and calculate Raising Cane's calories, macros, and nutrition facts for chicken fingers, fries, Texas toast, Cane's Sauce, drinks, and combos.",
 };
 
 const calculatorBenefits = [
