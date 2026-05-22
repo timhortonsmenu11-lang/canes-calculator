@@ -246,7 +246,7 @@ export function SiteHeader() {
 function AuthorBio() {
   return (
     <section className="mx-auto mb-10 max-w-7xl border border-white/10 bg-white/[0.04] p-5 text-white shadow-2xl shadow-black/20 sm:p-8">
-      <div className="grid gap-6 lg:grid-cols-[0.72fr_1fr] lg:items-start">
+      <div className="grid gap-6 lg:grid-cols-[0.8fr_1fr] lg:items-start">
         <div>
           <p className="text-sm font-black uppercase text-[#ffd166]">
             About the author
@@ -279,62 +279,50 @@ function AuthorBio() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          <Link
-            href="/"
-            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
-          >
+          <div className="border border-white/10 bg-black/20 p-4">
             <Calculator
               aria-hidden="true"
               className="h-5 w-5 text-[#ffd166]"
             />
-            <p className="mt-3 font-black text-white">Nutrition calculator</p>
-            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
-              Build a Cane&apos;s meal and check calories, macros, sodium, and
-              protein totals.
+            <p className="mt-3 font-black text-white">Nutrition data review</p>
+            <p className="mt-1 text-sm leading-6 text-white/55">
+              We organize calories, macros, sodium, protein, and serving-size
+              details into clearer page sections.
             </p>
-          </Link>
-          <Link
-            href="/raising-canes-menu"
-            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
-          >
+          </div>
+          <div className="border border-white/10 bg-black/20 p-4">
             <BookOpenCheck
               aria-hidden="true"
               className="h-5 w-5 text-[#ffd166]"
             />
-            <p className="mt-3 font-black text-white">Menu and prices</p>
-            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
-              Compare combos, sides, drinks, prices, and menu notes before
-              ordering.
+            <p className="mt-3 font-black text-white">Menu research</p>
+            <p className="mt-1 text-sm leading-6 text-white/55">
+              We compare combos, sides, drinks, menu notes, and ordering
+              questions from a customer-first angle.
             </p>
-          </Link>
-          <Link
-            href="/allergen-menu"
-            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
-          >
+          </div>
+          <div className="border border-white/10 bg-black/20 p-4">
             <ShieldAlert
               aria-hidden="true"
               className="h-5 w-5 text-[#ffd166]"
             />
-            <p className="mt-3 font-black text-white">Allergen guide</p>
-            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
-              Review wheat, milk, egg, soy, fish, sesame, and cross-contact
-              notes.
+            <p className="mt-3 font-black text-white">Allergen context</p>
+            <p className="mt-1 text-sm leading-6 text-white/55">
+              We flag common allergens, gluten concerns, and cross-contact
+              reminders without treating them as medical advice.
             </p>
-          </Link>
-          <Link
-            href="/blog"
-            className="group border border-white/10 bg-black/20 p-4 transition hover:border-[#d71920]/50 hover:bg-[#d71920]/10"
-          >
+          </div>
+          <div className="border border-white/10 bg-black/20 p-4">
             <ClipboardCheck
               aria-hidden="true"
               className="h-5 w-5 text-[#ffd166]"
             />
-            <p className="mt-3 font-black text-white">Research notes</p>
-            <p className="mt-1 text-sm leading-6 text-white/55 group-hover:text-white/75">
-              Read payment guides, calorie breakdowns, and practical ordering
-              answers.
+            <p className="mt-3 font-black text-white">Practical checks</p>
+            <p className="mt-1 text-sm leading-6 text-white/55">
+              We keep guidance practical, source-aware, and focused on what
+              helps before ordering.
             </p>
-          </Link>
+          </div>
         </div>
       </div>
     </section>
