@@ -14,6 +14,27 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/does-raising-canes-have-macaroni-and-cheese",
+    title: "Does Raising Cane's Have Macaroni and Cheese?",
+    excerpt:
+      "No, mac and cheese is not on Cane's regular official menu. See what sides Cane's does serve, why Caniac Mac claims spread online, and what to order instead.",
+    tag: "Menu Guide",
+    date: "May 22, 2026",
+    image: "/raising-canes-mac-and-cheese-hero.png",
+    imageAlt:
+      "Raising Cane's style chicken fingers, fries, toast, sauce, and coleslaw without mac and cheese",
+  },
+  {
+    href: "/is-raising-canes-open-on-sundays",
+    title: "Is Raising Cane's Open on Sundays? Cane's Sunday Guide 2026",
+    excerpt:
+      "Check whether Cane's is open on Sundays, what time locations usually open and close, drive-thru and lobby hour differences, holiday changes, and how to verify local hours.",
+    tag: "Hours Guide",
+    date: "May 22, 2026",
+    image: "/raising-canes-sunday-hours-hero.png",
+    imageAlt: "Fast-food restaurant exterior on a Sunday for a Raising Cane's hours guide",
+  },
+  {
     href: "/does-canes-take-apple-pay",
     title: "Does Cane's Take Apple Pay? Raising Cane's Payment Guide",
     excerpt:
