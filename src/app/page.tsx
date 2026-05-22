@@ -6,9 +6,25 @@ import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Raising Cane's Calculator | Check Calories & Nutrition Facts",
+  title: "Cane's Nutrition Calculator & Facts | Check Calories",
   description:
-    "Build your meal and calculate Raising Cane's calories, macros, and nutrition facts for chicken fingers, fries, Texas toast, Cane's Sauce, drinks, and combos.",
+    "Use Cane's Nutrition Calculator and nutrition facts guide to check calories, macros, protein, sodium, allergens, and meal totals before ordering.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Cane's Nutrition Calculator & Facts | Check Calories",
+    description:
+      "Use the Raising Cane's nutrition facts guide and calculator to check calories, macros, allergens, and meal totals.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cane's Nutrition Calculator & Facts | Check Calories",
+    description:
+      "Use the Raising Cane's nutrition facts guide and calculator to check calories, macros, allergens, and meal totals.",
+  },
 };
 
 const calculatorBenefits = [
@@ -145,7 +161,9 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "Cane's Nutrition Calculator",
+            name: "Cane's Nutrition Calculator & Facts",
+            description:
+              "An informational Raising Cane's nutrition facts guide with an interactive calorie and macro calculator.",
             applicationCategory: "HealthApplication",
             operatingSystem: "Any",
             offers: {
@@ -164,11 +182,13 @@ export default function Home() {
             Updated 2026 nutrition tool
           </p>
           <h1 className="mt-2 text-4xl font-black leading-tight text-[#151515] sm:text-5xl">
-            Cane&apos;s Nutrition Calculator
+            Raising Cane&apos;s Nutrition Facts &amp; Calculator
           </h1>
           <p className="mt-4 max-w-4xl text-lg leading-8 text-black/60">
-            Build a Cane&apos;s meal, compare calories and macros, review
-            nutrition facts, and check the{" "}
+            Use this page as a Raising Cane&apos;s nutrition facts guide and an
+            interactive calculator. Check calories, macros, protein, sodium,
+            allergens, and meal totals for chicken fingers, fries, Texas toast,
+            Cane&apos;s Sauce, drinks, and combos before ordering from the{" "}
             <Link
               href="/raising-canes-menu"
               className="font-black text-[#d71920] underline underline-offset-4 hover:text-[#b9151b]"
@@ -179,10 +199,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="hidden mt-6 overflow-hidden rounded-3xl border border-black/10 bg-white shadow-xl shadow-black/5">
+        <div className="mt-6 overflow-hidden border border-black/10 bg-white shadow-xl shadow-black/5">
           <Image
             src="/raising%20cane%27s%20nutrition%20facts%20calculator.webp"
-            alt="raising cane's nutrition facts calculator"
+            alt="Raising Cane's nutrition facts calculator showing calories and macros"
             width={1200}
             height={700}
             className="h-auto w-full object-cover"
@@ -347,7 +367,7 @@ export default function Home() {
               },
             ].map((item) => (
               <article key={item.title} className="border border-black/10 p-4">
-                <h3 className="text-xl font-black">{item.title}</h3>
+                <p className="text-xl font-black">{item.title}</p>
                 <p className="mt-2 leading-7 text-black/60">{item.text}</p>
               </article>
             ))}
@@ -445,12 +465,10 @@ export default function Home() {
             before building your meal in the calculator.
           </p>
           <p>
-            The table is useful for users searching for Raising Cane&apos;s
-            nutrition, Cane&apos;s nutrition facts, Raising Cane&apos;s nutrition menu,
-            Raising Cane&apos;s nutrition information, Raising Cane&apos;s nutritional
-            information, Canes calorie counter, and Raising Cane&apos;s calorie
-            calculator. You can use the table and calculator together for better
-            meal planning.
+            Use the table with the calculator when you want to compare menu
+            items side by side, then build a meal and see how each chicken
+            finger, side, sauce, or drink changes your total calories and
+            macros.
           </p>
         </ContentSection>
 

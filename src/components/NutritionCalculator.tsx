@@ -10,7 +10,7 @@ import {
   ShoppingBasket,
   X,
 } from "lucide-react";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   allergenKey,
@@ -349,9 +349,7 @@ export function NutritionCalculator() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [cart, setCartState] = useState<Cart>({});
-
-  useEffect(() => {
+  const cart = useMemo(() => {
     const newCart: Cart = {};
     searchParams.forEach((val, key) => {
       const num = parseInt(val, 10);
@@ -359,23 +357,25 @@ export function NutritionCalculator() {
         newCart[key] = num;
       }
     });
-    setCartState(newCart);
+    return newCart;
   }, [searchParams]);
 
   const setCart = (updater: Cart | ((prev: Cart) => Cart)) => {
-    setCartState((prev) => {
-      const next = typeof updater === "function" ? updater(prev) : updater;
-      const params = new URLSearchParams();
-      searchParams.forEach((val, key) => {
-         if (!nutritionItems.some(item => item.id === key)) {
-           params.set(key, val);
-         }
-      });
-      Object.entries(next).forEach(([id, quantity]) => {
-        if (quantity > 0) params.set(id, quantity.toString());
-      });
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-      return next;
+    const next = typeof updater === "function" ? updater(cart) : updater;
+    const params = new URLSearchParams();
+
+    searchParams.forEach((val, key) => {
+      if (!nutritionItems.some((item) => item.id === key)) {
+        params.set(key, val);
+      }
+    });
+    Object.entries(next).forEach(([id, quantity]) => {
+      if (quantity > 0) params.set(id, quantity.toString());
+    });
+
+    const queryString = params.toString();
+    router.replace(queryString ? `${pathname}?${queryString}` : pathname, {
+      scroll: false,
     });
   };
 
@@ -459,9 +459,9 @@ export function NutritionCalculator() {
                     Raising Cane&apos;s calculator
                   </span>
                 </div>
-                <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">
                   Build a meal in 3 steps
-                </h1>
+                </h2>
               </div>
               <div className="grid w-full grid-cols-2 border border-white/10 bg-white/[0.04] sm:w-auto sm:min-w-[460px] sm:grid-cols-4">
                 {[
@@ -557,9 +557,9 @@ export function NutritionCalculator() {
                         <p className="text-[11px] font-black uppercase text-[#d71920]">
                           {item.category}
                         </p>
-                        <h3 className="mt-1 text-sm font-black leading-tight text-[#151515]">
+                        <p className="mt-1 text-sm font-black leading-tight text-[#151515]">
                           {item.name}
-                        </h3>
+                        </p>
                         <p className="mt-1 text-xs font-semibold text-black/45">
                           {item.serving}
                         </p>
@@ -857,9 +857,9 @@ export function NutritionCalculator() {
                     <p className="text-[11px] font-black uppercase text-[#d71920]">
                       {item.category}
                     </p>
-                    <h3 className="mt-1 text-base font-black leading-tight">
+                    <p className="mt-1 text-base font-black leading-tight">
                       {item.name}
-                    </h3>
+                    </p>
                     <p className="mt-1 text-xs font-semibold text-black/45">
                       {item.serving}
                     </p>

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Disclaimer | Cane's Nutrition Calculator",
   description:
     "Read the disclaimer for Cane's Nutrition Calculator, including fan-made status, no affiliation, nutrition data limitations, allergen warnings, and no medical advice.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {

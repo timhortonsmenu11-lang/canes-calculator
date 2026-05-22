@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Raising Cane’s Gluten Free Menu Guide May 2026",
   description:
     "Explore Raising Cane’s gluten free menu options, including Cane’s Sauce, coleslaw, fries, naked chicken, drinks, and cross-contact safety tips.",
+  alternates: {
+    canonical: "/gluten-free-menu",
+  },
 };
 
 const menuItems = [
@@ -396,7 +399,7 @@ export default function GlutenFreeMenuPage() {
               <li>✔ Fries only if the location confirms a dedicated fryer</li>
             </ul>
             <p className="mt-4 font-bold text-[#d71920]">
-              But for celiac customers, even this order may not be safe if the fryer or prep space is shared. Once you confirm the safe items, verify your total macros on our <Link href="/" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Cane's Nutrition Calculator</Link>.
+              But for celiac customers, even this order may not be safe if the fryer or prep space is shared. Once you confirm the safe items, verify your total macros on our <Link href="/" className="font-black text-[#d71920] underline hover:text-[#b9151b]">Cane&apos;s Nutrition Calculator</Link>.
             </p>
           </GuideSection>
 

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Cane's Nutrition Calculator",
   description:
     "Read the privacy policy for Cane's Nutrition Calculator, including cookies, analytics, advertising, contact information, and third-party services.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

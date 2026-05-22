@@ -18,24 +18,21 @@ export const metadata: Metadata = {
   description:
     "Check calories, protein, carbs, sodium, nutrition facts, and allergen menu details for your favorite Raising Cane's meals.",
   icons: {
-    icon: "/site-logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/site-logo.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/site-logo.png",
   },
   openGraph: {
-    title: "Cane's Nutrition Calculator",
-    description: "Build your meal and check the exact calories, macros, and allergen details for Raising Cane's.",
-    url: "/",
     siteName: "Cane's Nutrition",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cane's Nutrition Calculator",
-    description: "Build your meal and check the exact calories, macros, and allergen details for Raising Cane's.",
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 

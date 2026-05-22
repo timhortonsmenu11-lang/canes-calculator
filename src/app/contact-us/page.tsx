@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Contact Us | Cane's Nutrition Calculator",
   description:
     "Contact Cane's Nutrition Calculator for corrections, questions, privacy requests, or feedback about the fan-made nutrition calculator.",
+  alternates: {
+    canonical: "/contact-us",
+  },
 };
 
 export default function ContactUsPage() {

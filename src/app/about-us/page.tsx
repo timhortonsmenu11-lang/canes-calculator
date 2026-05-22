@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "About Us | Cane's Nutrition Calculator",
+  title: "About This Independent Nutrition Guide | Cane's Calculator",
   description:
-    "Learn about Cane's Nutrition Calculator, an independent fan-made nutrition calculator for Raising Cane's nutrition fans.",
+    "Learn about this independent fan-made guide for Raising Cane's calories, nutrition facts, macros, allergen details, and menu research.",
+  alternates: {
+    canonical: "/about-us",
+  },
 };
 
 export default function AboutUsPage() {
@@ -44,10 +47,8 @@ export default function AboutUsPage() {
       </p>
       <p>
         The content is intended for general informational and educational use.
-        It is especially helpful for users searching for phrases like
-        Raising Cane&apos;s nutrition calculator, Raising Cane&apos;s calories,
-        Cane&apos;s nutrition facts, Cane&apos;s allergen menu, Cane&apos;s protein, Cane&apos;s
-        carbs, and Cane&apos;s sodium.
+        Visitors can use the calculator, nutrition table, and guide pages to
+        review calories, macros, allergens, and menu details before they order.
       </p>
 
       <h2>Data Source and Accuracy</h2>

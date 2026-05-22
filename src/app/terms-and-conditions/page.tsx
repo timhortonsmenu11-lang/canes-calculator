@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Cane's Nutrition Calculator",
   description:
     "Read the Terms and Conditions for using Cane's Nutrition Calculator, an independent fan-made Raising Cane's nutrition calculator.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditionsPage() {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Raising Cane’s Allergen Menu & Allergy Guide 2026",
   description:
     "Check Raising Cane’s allergen menu for wheat, milk, egg, soy, fish, sesame, and peanut oil info. See Cane’s allergy guide before ordering.",
+  alternates: {
+    canonical: "/allergen-menu",
+  },
   keywords: [
     "Raising Cane's allergen menu",
     "Cane's allergens",
