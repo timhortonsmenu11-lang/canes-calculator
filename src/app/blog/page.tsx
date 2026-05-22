@@ -6,7 +6,7 @@ import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "Blog — Cane's Nutrition Calculator",
   description:
-    "Nutrition guides, calorie breakdowns, and meal planning tips for Raising Cane's. Real data, no fluff.",
+    "Nutrition guides, payment guides, calorie breakdowns, and meal planning tips for Raising Cane's. Clear answers, useful data, no fluff.",
   alternates: {
     canonical: "/blog",
   },
@@ -51,8 +51,8 @@ export default function BlogIndex() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-black/60">
             Deep dives into Raising Cane&apos;s nutrition — calorie counts,
-            macro breakdowns, allergen notes, and smarter ordering tips backed
-            by real data.
+            macro breakdowns, allergen notes, payment questions, and smarter
+            ordering tips backed by useful research.
           </p>
         </header>
 

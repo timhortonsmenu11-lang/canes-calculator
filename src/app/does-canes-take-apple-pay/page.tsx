@@ -523,7 +523,7 @@ export default function ApplePayGuidePage() {
             <a
               href="https://www.raisingcanes.com/faq/"
               className="font-black text-[#d71920] underline hover:text-[#b9151b]"
-              rel="nofollow noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               official Raising Cane&apos;s FAQ
@@ -532,7 +532,7 @@ export default function ApplePayGuidePage() {
             <a
               href="https://apps.apple.com/us/app/raising-canes-chicken-fingers/id1530642656"
               className="font-black text-[#d71920] underline hover:text-[#b9151b]"
-              rel="nofollow noopener noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               official App Store listing
